@@ -1,0 +1,40 @@
+import streamlit as st
+
+from Generator.MagicItemGenerator import generate_magic_item
+from Printer.MagicItemPrinter import display_item
+from Utility.ItemHelper import possible_item_rarities, possible_item_types
+
+st.set_page_config(layout="wide")
+_, main, _ = st.columns([1, 3, 1])
+
+with main:
+    st.title("Magic Item Generator")
+    st.write("This is a tool to generate flavorful magic items for your D&D campaign. Note that these Items might not "
+             "be balanced. Always double check with similar spells and use common sense.")
+
+    with st.form("Create Magic Item"):
+        cols = st.columns(4)
+        with cols[0]:
+            selected_rarity = st.selectbox("Rarity:", ["Random"] + possible_item_rarities)
+
+        with cols[1]:
+            selected_type = st.selectbox("Item Type:", ["Random"] + possible_item_types)
+
+        with cols[2]:
+            requires_attunement = st.selectbox("Attunement:", ["Random", "Yes", "No"])
+
+        with cols[3]:
+            cursed = st.selectbox("Cursed:", ["Random", "Yes", "No"])
+
+        example_prompt = "An item that can only be carried by the pure of heart"
+
+        description_text = st.text_input("Enter prompt:", "", placeholder=example_prompt)
+        submitted = st.form_submit_button("Submit")
+        if submitted:
+            with st.spinner('Creating your Magic Item...'):
+                generated_item = generate_magic_item(description_text, selected_rarity, selected_type,
+                                                     requires_attunement, cursed)
+            if generated_item is not None:
+                display_item(generated_item)
+            else:
+                st.error("Something went wrong while parsing the response.")
