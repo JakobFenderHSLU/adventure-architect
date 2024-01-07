@@ -25,7 +25,7 @@ def generate_spell_prompt(description, selected_level, selected_school, selected
                           selected_spell_duration):
     return_format = f"""
     THE RETURN FORMAT SHOULD ALWAYS BE PARSABLE TO JSON. 
-    DO NOT USE LINE BREAKS. START WITH "{" AND END WITH "}". \n
+    DO NOT USE LINE BREAKS. START WITH "{{" AND END WITH "}}". \n
     Return the Spell in the following format: : \n
     {spell_template}
     """

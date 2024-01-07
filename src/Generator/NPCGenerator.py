@@ -24,7 +24,7 @@ def generate_npc_prompt(description, selected_alignment, selected_challenge_rati
                         selected_race):
     return_format = f"""
     THE RETURN FORMAT SHOULD ALWAYS BE PARSABLE TO JSON. 
-    DO NOT USE LINE BREAKS. START WITH "{" AND END WITH "}". \n
+    DO NOT USE LINE BREAKS. START WITH "{{" AND END WITH "}}". \n
     Return the NPC in the following format: \n
     {npc_template}
     """

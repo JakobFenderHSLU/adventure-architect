@@ -20,7 +20,7 @@ def generate_monster_prompt(description, selected_monster_type, selected_challen
                             selected_environment, selected_legendary, selected_lair):
     return_format = f"""
     THE RETURN FORMAT SHOULD ALWAYS BE PARSABLE TO JSON. 
-    DO NOT USE LINE BREAKS. START WITH "{" AND END WITH "}". \n
+    DO NOT USE LINE BREAKS. START WITH "{{" AND END WITH "}}". \n
     Return the Monster in the following format: : \n
     {monster_template}
     """

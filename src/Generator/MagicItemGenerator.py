@@ -15,7 +15,7 @@ def generate_magic_item(description, selected_rarity, selected_type, requires_at
 def generate_magic_item_prompt(description, selected_rarity, selected_type, requires_attunement, cursed):
     return_format = f"""
     THE RETURN FORMAT SHOULD ALWAYS BE PARSABLE TO JSON. 
-    DO NOT USE LINE BREAKS. START WITH "{" AND END WITH "}". \n
+    DO NOT USE LINE BREAKS. START WITH "{{" AND END WITH "}}". \n
     Return the Item in the following format: \n
     {item_template}
     """
@@ -93,5 +93,7 @@ def generate_magic_item_prompt(description, selected_rarity, selected_type, requ
         {"role": "system", "content": guide},
         {"role": "user", "content": prompt}
     ]
+
+    print(chatgpt_messages)
 
     return chatgpt_messages
