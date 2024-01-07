@@ -40,9 +40,13 @@ def parse_to_json(response_text: str, fix_using_chatgpt: bool = True):
         response_text = response_text.replace("\n", "")
         if not response_text.startswith("{"):
             response_text = "{" + response_text
+        elif response_text.startswith("{{"):
+            response_text = response_text[1:]
 
         if not response_text.endswith("}"):
             response_text = response_text + "}"
+        elif response_text.endswith("}}"):
+            response_text = response_text[:-1] + "}"
 
         response_json: dict = json.loads(response_text)
         return response_json

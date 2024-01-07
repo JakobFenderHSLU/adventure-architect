@@ -16,7 +16,7 @@ def generate_magic_item_prompt(description, selected_rarity, selected_type, requ
     return_format = f"""
     THE RETURN FORMAT SHOULD ALWAYS BE PARSABLE TO JSON. 
     DO NOT USE LINE BREAKS. START WITH "{" AND END WITH "}". \n
-    Return the Item in the following format: : \n
+    Return the Item in the following format: \n
     {item_template}
     """
 

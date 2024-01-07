@@ -10,7 +10,7 @@ item_template = """{
     "Story": "",
     "Price": 0,
     "Rarity": "",
-    "Attunement": ""
+    "Attunement": "",
     "Curse": ""
 }"""
 
