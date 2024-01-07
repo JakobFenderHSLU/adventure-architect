@@ -11,8 +11,9 @@ st.set_page_config(layout="wide")
 _, main, _ = st.columns([1, 3, 1])
 
 with main:
-    st.title("Create A Monster")
-    st.write("This tool helps you to create memorable monsters on the fly.")
+    st.title("Create a Monster")
+    st.write("This tool is a valuable asset for crafting unforgettable monsters on the fly, making it a go-to " +
+             "resource for spontaneous and captivating encounters in your campaign.")
 
     with st.form("Monster Generator"):
         cols = st.columns(4)

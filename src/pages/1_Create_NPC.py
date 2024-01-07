@@ -11,9 +11,9 @@ st.set_page_config(layout="wide")
 _, main, _ = st.columns([1, 3, 1])
 
 with main:
-    st.title("Create NPC")
-    st.write("This tool helps you to generate NPCs on the fly. Especially useful if you have players that are "
-             "easily distracted.")
+    st.title("Create an NPC")
+    st.write("This tool is a valuable resource for effortlessly creating NPCs on the spot, making it particularly " +
+             "indispensable when dealing with players who tend to get easily distracted.")
 
     with st.form("NPC Generator"):
         cols = st.columns(4)

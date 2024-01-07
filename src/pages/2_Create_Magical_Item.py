@@ -8,9 +8,11 @@ st.set_page_config(layout="wide")
 _, main, _ = st.columns([1, 3, 1])
 
 with main:
-    st.title("Magic Item Generator")
-    st.write("This is a tool to generate flavorful magic items for your D&D campaign. Note that these Items might not "
-             "be balanced. Always double check with similar spells and use common sense.")
+    st.title("Create a Magic Item")
+    st.write("This tool is a resource for crafting captivating and immersive magic items to enrich your Dungeons " +
+             "& Dragons campaign. Keep in mind that while these items are designed to add flavor and intrigue, " +
+             "they may not always adhere to strict game balance. It's advisable to cross-reference them with " +
+             "comparable spells and apply a touch of practicality when introducing them into your game world.")
 
     with st.form("Create Magic Item"):
         cols = st.columns(4)

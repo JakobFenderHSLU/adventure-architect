@@ -14,8 +14,9 @@ _, main, _ = st.columns([1, 3, 1])
 
 with main:
     st.title("Create a Spell")
-    st.write("This is a tool to generate flavourful spells for your D&D character. Note that these spells might not "
-             "be balanced. Always double check with similar spells and use common sense.")
+    st.write("This is a tool designed to conjure up rich and imaginative spells for your D&D character. It's worth " +
+             "noting that these spells may not always adhere to perfect balance, so it's advisable to " +
+             "cross-reference them with existing spells and exercise a dose of practical judgment.")
 
     with st.form("Spell Generator"):
         cols = st.columns(4)
